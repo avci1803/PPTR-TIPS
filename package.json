@@ -1,7 +1,6 @@
 {
   "name": "pptr-tips",
   "version": "1.0.0",
-  "description": "",
   "main": "\u001b[A\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[Dtips and tricks\u001b[B",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,5 +9,7 @@
   "license": "ISC",
   "dependencies": {
     "puppeteer": "^21.5.0"
-  }
+  },
+  "devDependencies": {},
+  "description": ""
 }
