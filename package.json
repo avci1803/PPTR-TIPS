@@ -8,8 +8,8 @@
   "author": "mehmet",
   "license": "ISC",
   "dependencies": {
+    "firefox": "^0.0.1",
     "puppeteer": "^21.5.0"
   },
-  "devDependencies": {},
   "description": ""
 }
