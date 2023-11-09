@@ -8,18 +8,35 @@ var _homepage = require("./homepage");
 
 var _homepage2 = _interopRequireDefault(_homepage);
 
+var _mochaSteps = require("mocha-steps");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-//const puppeteer = require("puppeteer");
 describe("Loads URL", function () {
-  it("should work", async function () {
-    var browser = await _puppeteer2.default.launch({ headless: false });
-    var page = await browser.newPage();
+  var browser = void 0;
+  var page = void 0;
 
-    var homepage = new _homepage2.default(page);
-    //await page.goto("http://zero.webappsecurity.com/index.html");
-    await homepage.visit();
-    await page.waitFor(5000);
+  before(async function () {
+    browser = await _puppeteer2.default.launch({ headless: false });
+    page = await browser.newPage();
+    await page.setDefaultTimeout(5000);
+  });
+
+  after(async function () {
     await browser.close();
   });
-});
+
+  (0, _mochaSteps.step)("should load homepage", async function () {
+    var homepage = new _homepage2.default(page);
+    await homepage.visit();
+  });
+  (0, _mochaSteps.step)("step 2", async function () {
+    await page.waitForSelector("#Fail");
+  });
+  (0, _mochaSteps.step)("astep 3", async function () {
+    await page.waitForSelector("#Fail");
+  });
+  (0, _mochaSteps.step)("step 4", async function () {
+    await page.waitForSelector("#Fail");
+  });
+}); //const puppeteer = require("puppeteer");
